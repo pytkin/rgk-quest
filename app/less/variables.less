@@ -1,0 +1,83 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Scaffolding
+//
+// ## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               #797979;
+//** Global text color on `<body>`.
+@text-color:            #2f1b15;
+//** Text muted color
+@text-muted:            fade(#2f1b15, 40%);
+
+//** Global textual link color.
+@link-color:            #014f98;
+//** Link hover color.
+@link-hover-color:      lighten(@link-color, 10%);
+//** Link hover decoration.
+@link-hover-decoration: none;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:        "PT Sans", Helvetica, Arial, sans-serif;
+@font-family-serif:             Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:         "Courier New", Menlo, Monaco, Consolas, monospace;
+@font-family-base:              @font-family-sans-serif;
+
+@font-size-base:                14px;
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:              1.571428; // 22/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:          floor((@font-size-base * @line-height-base)); // ~22px
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+//== Forms
+//
+//##
+
+@input-font-size-base:         @font-size-base;
+
+//** `<input>` background color
+@input-bg:                       transparent;
+//** `<input disabled>` background color
+@input-bg-disabled:              transparent;
+
+//** Text color for `<input>`s
+@input-color:                    @text-color;
+//** Text color for filled `<input>`s
+@input-filled-color:             #fff;
+//** Text color for `<input disabled>
+@input-color-disabled:           #9a9b9d;
+//** `<input>` border color
+@input-border:                   #d5d7d8;
+//** `<input disabled>` border color
+@input-border-disabled:          #9a9b9d;
+//** Border color for inputs on focus
+@input-border-focus:             transparent;
+
+//** Placeholder text color
+@input-color-placeholder:        #9a9b9d;
+
+//** Default `.form-control` height
+@input-height-base:              39px;
+//** Huge `.form-control` height
+@input-height-huge:              56px;
+//** Large `.form-control` height
+@input-height-large:             47px;
+//** Small `.form-control` height
+@input-height-small:             29px;
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:                not-allowed;

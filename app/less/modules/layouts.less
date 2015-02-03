@@ -1,0 +1,56 @@
+//
+// Layouts
+// --------------------------------------------------
+
+
+// Header
+
+header {
+  padding: 48px 54px 50px 48px;
+  &:extend(.clearfix all);
+
+  .logo {
+    display: block;
+    background: data-uri('../img/logo.png') no-repeat 0 0;
+    width: 143px;
+    padding: 34px 0 0 4px;
+    margin-top: 19px;
+    float: left;
+
+    span {
+      font-size: 10px;
+      line-height: 1;
+    }
+  }
+  .case-seal {
+    display: block;
+    float: right;
+    background: data-uri('../img/case-seal.png') no-repeat 0 0;
+    width: 252px;
+    height: 106px;
+    margin-bottom: 38px;
+  }
+  .case-title {
+    display: block;
+    clear: both;
+    width: 216px;
+    height: 110px;
+    margin: 0 auto;
+    background: data-uri('../img/case-title.png') no-repeat 0 0;
+  }
+}
+
+// Content wrapper
+
+.content-wrapper {
+  margin: 0 auto;
+  width: 1000px;
+  min-height: 100%;
+  background: data-uri('../img/pattern.jpg') repeat 0 0 #e9cd9b;
+  &:extend(.clearfix all);
+}
+
+// Content
+.content {
+  padding: 0 120px 72px 110px;
+}

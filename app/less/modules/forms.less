@@ -1,0 +1,297 @@
+//
+// Forms
+// --------------------------------------------------
+
+// Normalize form controls
+//
+// While most of our form styles require extra classes, some basic normalization
+// is required to ensure optimum display with or without those classes to better
+// address browser inconsistencies.
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  line-height: normal;
+}
+
+// Focus for file, radio, and checkbox
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+
+// Common form controls
+//
+
+.control-label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  font-weight: bold;
+  font-size: 2.243rem; // ~22.43px
+}
+
+.field-group {
+  margin-bottom: 47px;
+
+  > li {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .control-label {
+    display: table-cell;
+    vertical-align: bottom;
+    border-right: 17px solid transparent;
+    margin-bottom: 0;
+    width: 1%;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .text-field {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
+.text-field {
+  display: inline-block;
+  background: data-uri('../img/user-option-underline.png') repeat-x bottom left;
+  font-size: 3rem;
+  line-height: 5rem;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-family: @font-family-monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// Checkboxes and radios
+//
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  margin-left: 0;
+  margin-top: 0;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.radio {
+  position: relative;
+  display: inline-block;
+  padding-left: 33px;
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: bold;
+  min-height: 28px;
+  line-height: 28px;
+  cursor: pointer;
+
+  input[type="radio"] {
+    width: 28px;
+    height: 28px;
+
+    &:checked + .radio-replace {
+      background-image: data-uri('../img/radio-01.png');
+    }
+  }
+  .radio-replace {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    background: data-uri('../img/radio-02.png') no-repeat 0 0;
+  }
+}
+.checkbox {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.radio-group {
+  margin-bottom: 45px;
+
+  .control-label {
+    margin-right: 30px;
+  }
+  .radio {
+    margin-right: 0;
+  }
+  .radio + .radio {
+    margin-left: 20px;
+  }
+}
+
+.checkbox-group {
+  margin-bottom: 80px;
+
+  .control-label {
+    margin-bottom: 7px;
+  }
+  .checkbox {
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 9px;
+    padding-left: 26px;
+
+    input[type="checkbox"] {
+      margin-top: 3px;
+      width: 19px;
+      height: 18px;
+
+      &:checked + .checkbox-replace {
+
+        &:after {
+          content: " ";
+          display: block;
+          position: absolute;
+          background: data-uri('../img/checkbox-mark.png') no-repeat 0 0;
+          width: 19px;
+          height: 25px;
+          bottom: 3px;
+          left: 5px;
+        }
+      }
+    }
+  }
+  .checkbox-replace {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    display: block;
+    width: 19px;
+    height: 18px;
+    cursor: pointer;
+    background: data-uri('../img/checkbox.png') no-repeat 0 0;
+  }
+  .row {
+    display: table;
+
+    > .col {
+      display: table-cell;
+      vertical-align: top;
+
+      &:nth-child(1) {
+        width: 259px;
+      }
+      &:nth-child(2) {
+        width: 279px;
+      }
+      &:nth-child(3) {
+        width: 230px;
+      }
+      .checkbox:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+  }
+}
+// These classes are used on elements with <label> descendants
+.radio,
+.checkbox {
+  &.disabled,
+  fieldset[disabled] & {
+    .control-label {
+      cursor: @cursor-disabled;
+    }
+  }
+}
+
+
+.help-block {
+  position: relative;
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
+  padding-left: 18px;
+  margin-bottom: 24px;
+
+  &:before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    content: "*";
+    font-size: 36px;
+    line-height: 1;
+    vertical-align: top;
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// Slider group
+
+.slider-group {
+  margin-bottom: 50px;
+  &:extend(.clearfix all);
+
+  .control-label {
+    margin-bottom: 42px;
+  }
+  .slider-options {
+    display: block;
+    width: 760px;
+    height: 38px;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    font-weight: bold;
+    list-style: none;
+
+    li {
+      display: block;
+      float: left;
+
+      &:nth-child(1) {
+        width: 145px;
+      }
+      &:nth-child(2) {
+        width: 228px;
+      }
+      &:nth-child(3) {
+        width: 170px;
+      }
+      &:nth-child(4) {
+        float: right;
+        width: 147px;
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+// Date group
+.date-group {
+  .control-label {
+    margin-right: 6px;
+  }
+}

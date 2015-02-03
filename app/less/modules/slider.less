@@ -1,0 +1,35 @@
+//
+// Slider
+// --------------------------------------------------
+
+// Default controls
+// -------------------------
+
+.ui-slider {
+  background: data-uri('../img/slider-bg.png') no-repeat 0 0 transparent;
+  width: 759px;
+  height: 26px;
+  position: relative;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.ui-slider-handle {
+  background: data-uri('../img/slider-handler.png') no-repeat 0 0;
+  cursor: pointer;
+  height: 14px;
+  position: absolute;
+  width: 17px;
+  z-index: 2;
+  top: -17px;
+  margin-left: -7px;
+
+  &[style^="left: 100%"] {
+    margin-left: -10px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
