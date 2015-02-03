@@ -27,9 +27,8 @@ input[type="checkbox"]:focus {
 
 .control-label {
   display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   font-weight: bold;
-  font-size: 2.243rem; // ~22.43px
+  font-size: 2.243rem;
 }
 
 .field-group {
@@ -180,19 +179,17 @@ input[type="checkbox"]:focus {
   }
   .row {
     display: table;
+    width: 100%;
 
     > .col {
       display: table-cell;
       vertical-align: top;
 
       &:nth-child(1) {
-        width: 259px;
+        width: 252px;
       }
       &:nth-child(2) {
         width: 279px;
-      }
-      &:nth-child(3) {
-        width: 230px;
       }
       .checkbox:last-child {
         margin-bottom: 0;
@@ -277,11 +274,11 @@ input[type="checkbox"] {
         width: 228px;
       }
       &:nth-child(3) {
-        width: 170px;
+        width: 195px;
       }
       &:nth-child(4) {
         float: right;
-        width: 147px;
+        width: 162px;
         text-align: right;
       }
     }
